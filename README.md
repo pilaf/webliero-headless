@@ -392,3 +392,5 @@ For server name:
 ```js
 document.querySelector("[data-hook=name]").value = "𝕆𝕡𝕖𝕟 𝟚𝟜／𝟟"
 ```
+
+For player limit focus on dropdown and use the up/down arrowss.
