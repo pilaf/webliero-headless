@@ -377,3 +377,18 @@ In remote debugging console paste:
     }
 })();
 ```
+
+## Set nickname, server name and player limit
+
+Copy/paste from local machine is not possible, so if you want to use emoji in
+the nickname you need to do:
+
+```js
+document.querySelector("[placeholder=Nickname]").value = "Hi I'm a server 🖥️"
+```
+
+For server name:
+
+```js
+document.querySelector("[data-hook=name]").value = "𝕆𝕡𝕖𝕟 𝟚𝟜／𝟟"
+```
