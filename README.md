@@ -394,3 +394,41 @@ document.querySelector("[data-hook=name]").value = "𝕆𝕡𝕖𝕟 𝟚𝟜／
 ```
 
 For player limit focus on dropdown and use the up/down arrowss.
+
+## Recommended room settings
+
+### Liero Promode Final
+
+* Game Mode: Deathmatch (default)
+* Score Limit: 10
+* Time Limit: 10 (default)
+* Level Pool: Arenas: Good (67)
+* Expand Level: Off (default)
+* Loading Times: 0.4 (default)
+* Force Randomize Weapons: Off (default)
+* Teams Locked: Off (default)
+* Damage Multiplier: 1 (default)
+* Respawn Delay: 3
+* Reload Weapons On Spawn: On (default)
+* Lock Weapons During Match: Off (default)
+* Bonus Drops: Health only
+* Bonus Spawn Frequency: 30 (default)
+* Weapon Bans: Big Nuke, Hoover Crack, Bouncy Larpaa
+
+### Liero 1.33
+
+* Game Mode: Deathmatch (default)
+* Score Limit: 10
+* Time Limit: 10
+* Level Pool: All: Best (52)
+* Expand Level: Off (default)
+* Loading Times: 0.4 (default)
+* Force Randomize Weapons: Off (default)
+* Teams Locked: Off (default)
+* Damage Multiplier: 1 (default)
+* Respawn Delay: 3
+* Reload Weapons On Spawn: On (default)
+* Lock Weapons During Match: Off (default)
+* Bonus Drops: Health only
+* Bonus Spawn Frequency: 30 (default)
+* Weapon Bans: Big Nuke, Crackler, Bouncy Larpa
