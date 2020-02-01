@@ -5,7 +5,7 @@
 In a `screen` session in remote machine:
 
 ```
-$ chromium --headless --remote-debugging-port=9222 --disable-gpu --disable-audio https://www.webliero.com
+$ chromium --headless --remote-debugging-port=9222 --disable-gpu --disable-audio --disable-background-timer-throttling https://www.webliero.com
 ```
 
 In local machine:
