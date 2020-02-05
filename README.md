@@ -16,6 +16,10 @@ $ ssh -L 9222:localhost:9222 %REMOTE_ADDRESS%
 
 Then in a local Chrome access http://localhost:9222
 
+## Dedicated flag
+
+In local storage set `ded_serv` to 1. You may have to reload the page for it to take effect.
+
 ## Dummy WebGL Script
 
 In remote debugging console paste:
