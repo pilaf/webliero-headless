@@ -1,6 +1,6 @@
 # Headless WebLiero
 
-## Headless WebLiero script
+## Chromium Launcher script
 
 Place this somewhere like `~/bin/webliero-headless` and `chmod +x` it.
 
@@ -50,7 +50,7 @@ URL=${2:-https://www.webliero.com/}
   $URL
 ```
 
-## Headless Chromium setup
+## Setup
 
 In a `screen` session in remote machine:
 
