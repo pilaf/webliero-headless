@@ -1,17 +1,67 @@
 # Headless WebLiero
 
+## Headless WebLiero script
+
+Place this somewhere like `~/bin/webliero-headless` and `chmod +x` it.
+
+```bash
+#!/usr/bin/bash
+
+# Based on:
+# https://github.com/deepsweet/chromium-headless-remote/blob/master/entrypoint.sh
+#
+# --disable-features=WebRtcHideLocalIpsWithMdns is required with Chromium >= 78, otherwise
+# rooms become unconnectable.
+# See https://groups.google.com/forum/#!topic/discuss-webrtc/6stQXi72BEU
+
+# First argument is the debug port
+DEBUG_PORT=${1:-9222}
+
+# Second argument is the website URL
+URL=${2:-https://www.webliero.com/}
+
+/usr/bin/chromium \
+  --disable-background-networking \
+  --disable-background-timer-throttling \
+  --disable-breakpad \
+  --disable-client-side-phishing-detection \
+  --disable-default-apps \
+  --disable-dev-shm-usage \
+  --disable-extensions \
+  --disable-sync \
+  --disable-translate \
+  --disable-popup-blocking \
+  --disable-prompt-on-repost \
+  --disable-audio-output \
+  --headless \
+  --hide-scrollbars \
+  --ignore-certificate-errors \
+  --ignore-certificate-errors-spki-list \
+  --ignore-ssl-errors \
+  --metrics-recording-only \
+  --mute-audio \
+  --no-sandbox \
+  --no-first-run \
+  --remote-debugging-address=127.0.0.1 \
+  --remote-debugging-port=$DEBUG_PORT \
+  --safebrowsing-disable-auto-update \
+  --disable-gpu \
+  --disable-features=WebRtcHideLocalIpsWithMdns \
+  $URL
+```
+
 ## Headless Chromium setup
 
 In a `screen` session in remote machine:
 
 ```
-$ chromium --headless --remote-debugging-port=9222 --disable-gpu --disable-audio --disable-background-timer-throttling https://www.webliero.com
+bin/webliero-headless 9222
 ```
 
 In local machine:
 
 ```
-$ ssh -L 9222:localhost:9222 %REMOTE_ADDRESS%
+ssh -L 9222:localhost:9222 %REMOTE_ADDRESS%
 ```
 
 Then in a local Chrome access http://localhost:9222
