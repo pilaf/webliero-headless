@@ -1,5 +1,12 @@
 # Headless WebLiero
 
+## TODO
+
+Use Headless API, documented at:
+
+* https://www.webliero.com/headlessdocs.txt
+* https://github.com/haxball/haxball-issues/wiki/Headless-Host (relevant portions only)
+
 ## Chromium Launcher script
 
 Place this somewhere like `~/bin/webliero-headless` and `chmod +x` it.
