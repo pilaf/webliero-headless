@@ -75,8 +75,8 @@ Then in a local Chrome/Chromium access http://localhost:9222 and paste the follo
 
 ```javascript
 room = WLInit({
-  token: "TOKEN", # ⚠️ Replace with token from https://api.webliero.com/getheadlesstoken
-  roomName: "Pro Mode ᴰᴱᴰ", # ⚠️ Replace with actual room name
+  token: "TOKEN", // ⚠️ Replace with token from https://api.webliero.com/getheadlesstoken
+  roomName: "Pro Mode ᴰᴱᴰ", // ⚠️ Replace with actual room name
   noPlayer: true,
   maxPlayers: 12,
   public: true,
@@ -85,9 +85,9 @@ room = WLInit({
   bonusDrops: "health"
 });
 
-# Provide admin on room join
+// Provide admin on room join
 room.onPlayerJoin = function(player) {
-  # ⚠️ Replace player auth with your own public key (the one shown here is pilaf's)
+  // ⚠️ Replace player auth with your own public key (the one shown here is pilaf's)
   if (player.auth == "nilGYweBI76riN6nO1DEDfPYPhP7wO31PM55wqy-5QA") {
     room.setPlayerAdmin(player.id, true);
   }
