@@ -79,10 +79,14 @@ room = WLInit({
   roomName: "Pro Mode ᴰᴱᴰ", // ⚠️ Replace with actual room name
   noPlayer: true,
   maxPlayers: 12,
-  public: true,
+  public: true
+});
+
+room.setSettings({
   scoreLimit: 10,
   respawnDelay: 3,
-  bonusDrops: "health"
+  bonusDrops: "health",
+  maxDuplicateWeapons: 0
 });
 
 // Provide admin on room join
