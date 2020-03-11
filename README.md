@@ -4,7 +4,7 @@
 
 * [WebLiero Headless API](https://www.webliero.com/headlessdocs.txt)
 * [HaxBall Headless API](https://github.com/haxball/haxball-issues/wiki/Headless-Host) (relevant portions identical to WebLiero)
-* [Get headless token](https://api.webliero.com/getheadlesstoken)
+* [Get headless token](http://www.webliero.com/headlesstoken)
 * [Get player auth](https://www.webliero.com/playerauth)
 
 ## Chromium Launcher script
@@ -75,7 +75,7 @@ Then in a local Chrome/Chromium access http://localhost:9222 and paste the follo
 
 ```javascript
 room = WLInit({
-  token: "TOKEN", // ⚠️ Replace with token from https://api.webliero.com/getheadlesstoken
+  token: "TOKEN", // ⚠️ Replace with token from http://www.webliero.com/headlesstoken
   roomName: "Pro Mode ᴰᴱᴰ", // ⚠️ Replace with actual room name
   noPlayer: true,
   maxPlayers: 12,
