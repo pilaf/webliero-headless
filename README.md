@@ -59,7 +59,7 @@ URL=${2:-https://www.webliero.com/headless}
 
 ## Headless room setup
 
-See [server provisioning](#server_provisioning) below for initial server setup.
+See [server provisioning](#server-provisioning) below for initial server setup.
 
 In a `screen` session in remote machine:
 
