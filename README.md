@@ -57,17 +57,19 @@ URL=${2:-https://www.webliero.com/headless}
   $URL
 ```
 
-## Setup
+## Headless room setup
+
+See [server provisioning](#server_provisioning) below for initial server setup.
 
 In a `screen` session in remote machine:
 
-```
+```bash
 bin/webliero-headless 9222
 ```
 
 In local machine:
 
-```
+```bash
 ssh -L 9222:localhost:9222 %REMOTE_HOST%
 ```
 
@@ -96,6 +98,35 @@ room.onPlayerJoin = function(player) {
     room.setPlayerAdmin(player.id, true);
   }
 };
+```
+
+## Server provisioning
+
+### Arch Linux
+
+Install tools:
+
+```bash
+pacman -S vim screen chromium
+```
+
+Create `webliero` user:
+
+```bash
+useradd -m -G wheel -s /bin/bash webliero
+```
+
+Make `vim` the default editor:
+
+```
+echo "EDITOR=vim" >> /etc/environment
+source /etc/environment && export EDITOR
+```
+
+Edit `sudoers` file and grant `sudo` access to `wheel` group:
+
+```bash
+visudo
 ```
 
 ## Recommended room settings
