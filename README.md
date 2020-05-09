@@ -107,13 +107,13 @@ room.onPlayerJoin = function(player) {
 Install tools:
 
 ```bash
-pacman -S vim screen chromium
+sudo pacman -S vim screen chromium
 ```
 
 Create `webliero` user:
 
 ```bash
-useradd -m -G wheel -s /bin/bash webliero
+sudo useradd -m -G wheel -s /bin/bash webliero
 ```
 
 Make `vim` the default editor:
@@ -127,6 +127,20 @@ Edit `sudoers` file and grant `sudo` access to `wheel` group:
 
 ```bash
 visudo
+```
+
+### Ubuntu
+
+Install tools:
+
+```bash
+sudo apt install chromium-browser screen nodejs npm
+```
+
+Create `webliero` user:
+
+```bash
+sudo adduser webliero
 ```
 
 ## Recommended room settings
