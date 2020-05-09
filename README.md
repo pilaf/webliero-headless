@@ -6,6 +6,7 @@
 * [HaxBall Headless API](https://github.com/haxball/haxball-issues/wiki/Headless-Host) (relevant portions identical to WebLiero)
 * [Get headless token](http://www.webliero.com/headlesstoken)
 * [Get player auth](https://www.webliero.com/playerauth)
+* [WebLiero Headless Launcher](https://gitlab.com/basro/webliero-headless-launcher)
 
 ## Chromium Launcher script
 
