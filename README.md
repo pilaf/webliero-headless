@@ -8,7 +8,89 @@
 * [Get player auth](https://www.webliero.com/playerauth)
 * [WebLiero Headless Launcher](https://gitlab.com/basro/webliero-headless-launcher)
 
-## Chromium Launcher script
+## Method 1: WebLiero Headless Launcher
+
+### Setup
+
+This requires installing nodejs and [WebLiero Headless Launcher](https://gitlab.com/basro/webliero-headless-launcher). Additionally `daemonize` is needed for the server launcher script.
+
+Place this somewhere like `~/bin/wlhl-server-start` and `chmod +x` it:
+
+```bash
+#!/usr/bin/env bash
+
+echo Starting wlhl server...
+
+daemonize -p $HOME/tmp/wlhl-server.pid -l $HOME/tmp/wlhl-server.lock -o $HOME/log/wlhl-server.log -a $(which wlhl) server --chrome-path=$(which chromium-browser)
+```
+
+Place this somewhere like `~/bin/wlhl-server-stop` and `chmod +x` it:
+
+```bash
+#!/usr/bin/env bash
+
+echo Stopping whlh server...
+
+pkill -F $HOME/tmp/wlhl-server.pid && rm $HOME/tmp/wlhl-server.{pid,lock}
+```
+
+To make the wlhl server autostart on reboot add it to cron with `crontab -e`:
+
+```
+@reboot PATH=$PATH:/usr/local/bin ~/bin/wlhl-server-start >> ~/log/cron.log 2>&1
+```
+
+Create a directory like `~/wlhl-scripts` where to put your room .js scripts.
+
+You can create a `basic.js` script with:
+
+```js
+(async function () {
+  console.log("Running Server...");
+  const room = window.WLInit({
+    token: window.WLTOKEN,
+    roomName: "Pro Mode ReRevisited ᴰᴱᴰ",
+    maxPlayers: 12,
+    public: true,
+    geo: {lat: -14.2, lon: -51.9, code: "br"}
+  });
+  window.WLROOM = room;
+
+  room.setSettings({
+    scoreLimit: 10,
+    respawnDelay: 3,
+    bonusDrops: "health",
+    maxDuplicateWeapons: 0
+  });
+
+  room.onRoomLink = (link) => console.log(link);
+  room.onPlayerChat = (player, message) => console.log(`<${player.name}> ${message}`);
+  room.onCaptcha = () => console.log("Invalid token");
+
+  // ⚠️ Replace player auth with your own public key (the one shown here is pilaf's)
+  const admins = new Set(["nilGYweBI76riN6nO1DEDfPYPhP7wO31PM55wqy-5QA"]);
+
+  room.onPlayerJoin = (player) => {
+    if ( admins.has(player.auth) ) {
+      room.setPlayerAdmin(player.id, true);
+    }
+  }
+})();
+```
+
+### Launching a room
+
+Run:
+
+```bash
+wlhl launch ~/wlhl-scripts/basic.js --id=rerev --token=TOKEN
+```
+
+Make sure to replace TOKEN with an actual token
+
+## Method 2 (the "old method"): Chromium Launcher script
+
+### Setup
 
 Place this somewhere like `~/bin/webliero-headless` and `chmod +x` it.
 
@@ -58,7 +140,7 @@ URL=${2:-https://www.webliero.com/headless}
   $URL
 ```
 
-## Headless room setup
+## Launching a room
 
 See [server provisioning](#server-provisioning) below for initial server setup.
 
