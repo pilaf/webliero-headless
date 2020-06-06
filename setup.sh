@@ -20,11 +20,11 @@ detect_distro()
 case $(detect_distro) in
 "Arch Linux")
         echo "Arch Linux detected, installing dependencies with pacman..."
-        sudo pacman --quiet -S vim chromium nodejs npm
+        sudo pacman --quiet -S chromium nodejs npm
         ;;
 "Ubuntu")
         echo "Ubuntu detected, installing dependencies with apt..."
-        sudo apt install vim chromium-browser nodejs npm
+        sudo apt install chromium-browser nodejs npm
         ;;
 *)
         echo "Couldn't recognize Linux distribution, aborting..."
@@ -45,3 +45,6 @@ cp $GIT_ROOT/server/wlhl-server ~/.local/bin/wlhl-server
 echo "Enabling and starting wlhl-server service..."
 systemctl --user enable wlhl-server
 systemctl --user start wlhl-server
+
+# Cleanup
+rm -rf $GIT_ROOT
