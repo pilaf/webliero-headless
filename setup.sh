@@ -41,6 +41,7 @@ mkdir -p ~/wlhl-scripts ~/.config/systemd/user ~/.local/bin
 echo "Copying system scripts..."
 cp $GIT_ROOT/server/wlhl-server.service ~/.config/systemd/user
 cp $GIT_ROOT/server/wlhl-server ~/.local/bin/wlhl-server
+chmod +x ~/.local/bin/wlhl-server
 
 echo "Enabling and starting wlhl-server service..."
 systemctl --user enable wlhl-server
