@@ -43,6 +43,9 @@ cp $GIT_ROOT/server/wlhl-server.service ~/.config/systemd/user
 cp $GIT_ROOT/server/wlhl-server ~/.local/bin/wlhl-server
 chmod +x ~/.local/bin/wlhl-server
 
+echo "Enabling user-lingering to keep WLHL server alive..."
+loginctl enable-linger
+
 echo "Enabling and starting wlhl-server service..."
 systemctl --user enable wlhl-server
 systemctl --user start wlhl-server
