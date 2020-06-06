@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo Starting wlhl server...
-
-daemonize -p $HOME/tmp/wlhl-server.pid -l $HOME/tmp/wlhl-server.lock -o $HOME/log/wlhl-server.log -a $(which wlhl) server --chrome-path=$(which chromium-browser)

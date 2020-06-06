@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+wlhl server --chrome-path=$(which chromium-browser 2>/dev/null || which chromium)
+
+#vim: filetype=bash:

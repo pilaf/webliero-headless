@@ -1,0 +1,9 @@
+[Unit]
+Description=WebLiero Headless Launcher server
+
+[Service]
+ExecStart=%h/.local/bin/wlhl-server
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target

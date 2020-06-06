@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo Stopping whlh server...
-
-pkill -F $HOME/tmp/wlhl-server.pid && rm $HOME/tmp/wlhl-server.{pid,lock}
